@@ -3,45 +3,45 @@
 ## 1. 取得您的第一個 Power BI 帳號
 
 - 前往 https://powerbi.microsoft.com/en-us/ 免費註冊 Power BI 帳號
-  ![](https://i.imgur.com/EjSaYPb.png)
-  ![](https://i.imgur.com/znPJO6F.png)
+  ![](zh-tw.assets/EjSaYPb.png)
+  ![](zh-tw.assets/znPJO6F.png)
 
 - 註冊後，畫面將顯示以下頁面：
-  ![](https://i.imgur.com/3XtwFn0.png)
+  ![](zh-tw.assets/3XtwFn0.png)
 
 ## 2. 設定串流資料集 API
 
 - 點選中間的 **\[My workspace\]**，然後點擊右上角的 **\[Create\]->\[Streaming datasets\]**
-  ![](https://i.imgur.com/RHwCn7t.png)
-  ![](https://i.imgur.com/A0bHYv4.png)
+  ![](zh-tw.assets/RHwCn7t.png)
+  ![](zh-tw.assets/A0bHYv4.png)
 
 
 - 選取 **\[API\]** 作為資料來源，然後點擊 **\[Next\]**
-  ![](https://i.imgur.com/qwAw3LR.png)
+  ![](zh-tw.assets/qwAw3LR.png)
 
 - 定義您的串流值，然後您將在文字方塊中得到 JSON 結果。 我們將使用此 JSON 碼推送資料至 IoT 應用。 點擊 **\[Create\]** 即可完成。
-  ![](https://i.imgur.com/M0Yanqa.png)
+  ![](zh-tw.assets/M0Yanqa.png)
 
 - 一旦建立資料串流後，你會獲得 Push URL；IoT 應用可使用 POST 要求呼叫此 URL，將您的即時資料推送至您建立的串流資料集。
-  ![](https://i.imgur.com/VxBXVDl.png)
+  ![](zh-tw.assets/VxBXVDl.png)
 
 
 ## 3. 設定 IoT 應用中的 Node-RED 節點
 
 - 在 QIoT Suite 中建立 IoT 應用。 以下是您的第一個 Node-RED 流程，接著您可以開始建立自己的 IoT 流程。 如需深入瞭解 Node-RED，請瀏覽 https://nodered.org/
-  ![](https://i.imgur.com/GBmWP1i.png)
+  ![](zh-tw.assets/GBmWP1i.png)
 
 - 在您開始發佈即時資料至 Power BI 之前， 我們需要 **\[change\]** 節點以轉換 IoT 資料為串流資料集。參考下圖設定，您可以在此將 **temperature** 取代為您所設定的 value-key，或是使用 **\[function\]** 節點做更加彈性的設定。
-  ![](https://i.imgur.com/qNpZTPR.png)
+  ![](zh-tw.assets/qNpZTPR.png)
 
 - 我們需要 **\[http request\]** 節點來協助推送即時資料至 Power BI。 您只需拖放 **\[http request\]** 節點，使其連至 **\[change\]** 節點節點的尾巴即可。
-  ![](https://i.imgur.com/2NopiqU.png)
+  ![](zh-tw.assets/2NopiqU.png)
 
 - 複製並貼上您從 Power BI dataset 取得的 Push URL，然後將 http 方法設為 POST。 點擊 **\[Save\]** 以儲存變更。
-  ![](https://i.imgur.com/2BMFY5a.png)
+  ![](zh-tw.assets/2BMFY5a.png)
 
 - 您的 Node-RED 流程如下所示。
-  ![](https://i.imgur.com/QgEHFD1.png)
+  ![](zh-tw.assets/QgEHFD1.png)
   
 - Node-Red 範例匯出參考 : 
     ```json
@@ -216,17 +216,17 @@
 ## 4. 新增圖磚以顯示即時資料
 
 - 點擊右上角的 **\[Create\] -> \[Dashboards\]** 建立您的第一個儀表板，然後點擊 **\[Add tile\]** 以設定 Widget
-  ![](https://i.imgur.com/mUgibMa.png)
+  ![](zh-tw.assets/mUgibMa.png)
 
 - 選取 **\[Custom Streaming Data\]** 並點擊 **\[Next\]**
-  ![](https://i.imgur.com/xRZ8VHp.png)
+  ![](zh-tw.assets/xRZ8VHp.png)
   
 - 選取資料集並點擊 **\[Next\]**
-  ![](https://i.imgur.com/gaNfSVb.png)
+  ![](zh-tw.assets/gaNfSVb.png)
 
 - 最後依據需求去設定標題等後並點擊 **\[Apply\]** ，您將擁有可供操作的串流資料集，並取得即時衡量工具（如下圖所示）
-  ![](https://i.imgur.com/7XYV4AY.png)
-  ![](https://i.imgur.com/aDoOBLS.png)
+  ![](zh-tw.assets/7XYV4AY.png)
+  ![](zh-tw.assets/aDoOBLS.png)
 
 
 ###### tags: `Tutorial`

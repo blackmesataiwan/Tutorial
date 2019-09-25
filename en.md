@@ -3,43 +3,43 @@
 ## 1. Get your first Power BI account
 
 - Sign up for a free PowerBI account at https://powerbi.microsoft.com/en-us/
-  ![](https://i.imgur.com/EjSaYPb.png)
-  ![](https://i.imgur.com/znPJO6F.png)
+  ![](en.assets/EjSaYPb.png)
+  ![](en.assets/znPJO6F.png)
   
 - After registering, you will see the following page:
-  ![](https://i.imgur.com/3XtwFn0.png)
+  ![](en.assets/3XtwFn0.png)
 
 ## 2. Setup your streaming dataset API
 
 - Cleck **\[My workspace\]** then click on the left menu **\[Create\]->\[Streaming datasets\]** in the top-right corner.
-  ![](https://i.imgur.com/RHwCn7t.png)
-  ![](https://i.imgur.com/A0bHYv4.png)
+  ![](en.assets/RHwCn7t.png)
+  ![](en.assets/A0bHYv4.png)
 
 - Select **\[API\]** as your source of data, and click **\[Next\]**.
-  ![](https://i.imgur.com/qwAw3LR.png)
+  ![](en.assets/qwAw3LR.png)
   
 - Define your values from stream, and you will get a JSON result in the textbox. We will use this JSON code to push data to the IoT application. Click **\[Create\]** to finish.
-  ![](https://i.imgur.com/M0Yanqa.png)
+  ![](en.assets/M0Yanqa.png)
   
 - Once you create your data stream, you get a Push URL which IoT applications can call using POST requests to push your live data to the streaming data dataset you created.
-  ![](https://i.imgur.com/VxBXVDl.png)
+  ![](en.assets/VxBXVDl.png)
 
 ## 3. Configure Node-RED’s nodes in IoT application
 
 - Create an IoT application in QIoT Suite. The following is your first Node-RED flow, and then you can start creating your own IoT flow. You can learn more about Node-RED at https://nodered.org/
-  ![](https://i.imgur.com/GBmWP1i.png)
+  ![](en.assets/GBmWP1i.png)
   
 - Before you start pushing live data to Power BI. We need a **\[change\]** node to convert IoT data to a streaming data dataset. Follow image below to set. Here you can replace **temperature** to your value-key in dataset or use the **\[function\]** node for more flexible settings.
-  ![](https://i.imgur.com/qNpZTPR.png)
+  ![](en.assets/qNpZTPR.png)
   
 - We need an **\[http request\]** node to help us to push live data to Power BI. Just drag and drop the **\[http request\]** node and connect to the tail of the **\[change\]** node.
-  ![](https://i.imgur.com/2NopiqU.png)
+  ![](en.assets/2NopiqU.png)
   
 - Copy and paste the Push URL that you got from the Power BI console, and set http method to POST. Click **\[Save\]** to save changes.
-  ![](https://i.imgur.com/2BMFY5a.png)
+  ![](en.assets/2BMFY5a.png)
   
 - Your Node-RED flow will look like below.
-  ![](https://i.imgur.com/QgEHFD1.png)
+  ![](en.assets/QgEHFD1.png)
   
 - Node-Red sample export to reference : 
     ```json
@@ -213,16 +213,15 @@
 ## 4. Add tiles to display real-time data
 
 - click on the left menu **\[Create\] -> \[Dashboards\]** in the top-right corner to create your first dashboard, then click **\[Add tile\]** to configure a widget.
-  ![](https://i.imgur.com/mUgibMa.png)
+  ![](en.assets/mUgibMa.png)
   
 - Select **\[Custom Streaming Data\]** and click **\[Next\]**.
-  ![](https://i.imgur.com/xRZ8VHp.png)
+  ![](en.assets/xRZ8VHp.png)
   
 - Select datasets and click **\[Next\]**.
-  ![](https://i.imgur.com/gaNfSVb.png)
+  ![](en.assets/gaNfSVb.png)
   
 - Finally, set the title and so on according to your needs and click **\[Apply\]**. You will have a streaming dataset to work with, and you can get a real time gauge that looks as following.
-  ![](https://i.imgur.com/7XYV4AY.png)
-  ![](https://i.imgur.com/aDoOBLS.png)
-  
+  ![](en.assets/7XYV4AY.png)
+  ![](en.assets/aDoOBLS.png)
 ###### tags: `Tutorial`
